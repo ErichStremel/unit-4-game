@@ -11,7 +11,7 @@ var wins = 0;
 var losses = 0;
 var goalNumber = Math.floor(Math.random() * Math.floor(102) + 19);
 var crystalValue
-$("#number-to-guess").text(goalNumber);
+
 
 
 
@@ -61,7 +61,7 @@ function reset() {
         img.attr('crystalVal', (Math.floor(Math.random() * 12) + 1));
     }
     $("#yourScore").text("0");
-    userScore = 0
+    userScore = 0;
     goalNumber = Math.floor(Math.random() * Math.floor(102) + 19);
 
 }
@@ -74,6 +74,7 @@ makeImages();
 // now we need to create a click event on crystals
 // use $(this).attr to capture value attribute
 // now we want to add this clicked value to the userscore so it accumulates
+$("#number-to-guess").text(goalNumber);
 
 $(".crystal").on('click', function () {
     // console.log(this);
@@ -100,5 +101,7 @@ $(".crystal").on('click', function () {
 
     $("#wins").text(wins);
     $("#losses").text(losses);
+    $("#number-to-guess").text(goalNumber);
+  
 
 });
